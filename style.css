@@ -1,0 +1,233 @@
+/*
+Bonjour
+
+ouvrir:
+ioanativadar.be/projets/rethinking-ux/facebook/
+recuperer les images sur:
+Prof/ThronteP/201617/layout-em-pourcentage/img/
+*/
+body {
+	font-family: 'Libre Baskerville', serif;
+	font-size: 22px;
+	color: #333;
+	font-weight: 400;
+	line-height: 2.45; /* Pas d'unité */
+	background-color: #F2F2F2;
+
+	margin: 0;
+}
+
+/*
+	On reprend?
+
+	Pour avoir un site responsive 
+	ET surtout fluide (pour toutes les tailles d'écran)
+	on va éviter de travailler avec des PX fixes
+
+	On va donc convertir nos PX en EM et en %
+
+	EM pour tout ce qui doit être propo à la typo
+	cad >
+
+	% pour tout ce qui est focntion de la taille de mon écran
+	cad >
+
+	Pour faire la convertion px > em et % on va utilsier une formule:
+	taille souhaitée ÷ contexte = résultat (*100 pour les %)
+
+	le contexte pour les % c'est la taille (width) du parent
+	le contexte pour les em c'est la taille (font-size) du parent 
+	SAUF quand la font-size de l'element est modifié, 
+	on prend alors cette nouvelle valeur
+
+	DES QUESTIONS?
+*/
+
+
+
+
+.title {
+	font-family: 'Montserrat', sans-serif;
+	color: #2D2824;
+	font-weight: 700;
+	line-height: 1.2;
+	font-size: 36px;
+}
+	.title--big{
+		font-size: 68px;
+		text-align: center;
+
+		width: 700px;
+		margin: 0 auto;
+	}
+	.title--small{
+		font-size: 22px;
+		text-align: center;
+		color: #999;
+		font-weight: 400;
+	}
+	.title--mission{
+		background-image: url(img/mission.svg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		padding-top: 240px;
+	}
+	.title--proto{
+		background-image: url(img/prototypes.svg);
+		background-repeat: no-repeat;
+		background-position: center top;
+		padding-top: 240px;
+	}
+
+/* LIEN */
+
+a {
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #4A90E2;
+}
+	a:hover,a:focus{}
+
+	.footer a {
+		font-size: 14px;
+		color: #fff;
+	}
+	.btn {
+		border: 1px solid #4A90E2;
+		font-size: 22px;
+		border-radius: 50px;
+		padding: 20px 80px;
+		display: inline-block;
+		margin-top: 50px;
+	}
+	.center{ text-align: center;  }
+		.btn:hover,.btn:focus {
+			color: #000;
+		}
+
+/* CITATION */
+.quote {
+	font-size: 36px;
+	color: #4A90E2;
+	line-height: 1.5;
+	font-style: italic;
+}
+	.quote:before{
+		content: "«";
+	}
+	.quote:after{
+		content: "»";
+	}
+
+/* LAYOUT */
+
+.container {
+	width: 1200px;
+	margin: 0 auto;
+}
+.col{
+	width: 780px;
+	margin: 100px auto;
+}
+
+.fimg{
+	margin: 100px 0;
+	text-align: center;
+}
+.fimg__caption{
+	font-size: 16px;
+	color: #999;
+	font-style: italic;
+	/*text-align: center;*/
+}
+img {
+	max-width: 100%;
+	/*
+	max 100% du parent
+	1200px
+	l'image garde sa taille max
+	*/
+}
+
+.header {
+	background: url(img/banner.png) 
+	no-repeat center bottom #D8D8D8;
+	height: 700px; 
+	background-size: cover;
+	margin-top: 80px;
+}
+	/* sur .title--big */
+	.title--big {
+		padding-top: 180px;
+	}
+.footer {
+	font-family: 'Montserrat', sans-serif; 
+	background: #4a4a4a;
+	font-size: 14px;
+	color: #fff;
+}
+
+.header__link {
+	position: relative;
+	top: -68px;
+}
+
+/* BOX */
+
+.box {
+	background-color: #fff;
+	overflow:hidden;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*
+	technique du clearfix
+	parent a des enfants en float
+	on applique au parent
+
+	1. la vrai technique
+	.clearfix:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+	2. overflow:hidden;
+	faineant
+	fonctionne pas toujours
+
+*/
+	.title__box{
+		background-color: #4A90E2;
+		color: #fff;
+		text-align: center;
+		margin: 0;
+		width: 50%;
+		float: left;
+		height: 525px;
+		line-height: 525px;
+	}
+	.box__info{
+		width: 46%;
+		float: right;
+		padding: 0 2%;
+	}
+
+
+
+
+
+
+
+
+
+
+
+
+
