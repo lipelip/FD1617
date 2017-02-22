@@ -1,0 +1,256 @@
+html{
+	/*Root*/
+	/* font-size: 100%;  16px */
+
+	font-size: 62.5%; /* 10px */
+}
+body{
+	margin: 0;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 2.2rem; /* taille souhaitée 22 ÷ le contexte */
+	color: #333;
+	line-height: 2.45; /* PAS UNITE */
+	font-weight: 400;
+	background-color: #F2F2F2;
+	border-top: 8rem solid #fff; /* 80 ÷ 22 */
+
+
+	/*
+	%
+	em
+	RootEM le contexte est tjrs = 16
+
+	
+	REM pour mettre des contextes en place
+	BEM
+	BLOCK (module)
+	elments
+
+	.dropmenu{} > REM
+	.dropmenu__el{} > EM
+
+
+
+	*/
+}
+
+/*
+travailler en % pour les rapports de largeur
+
+em
+travailler la type en rapport de proportion
+tous les rapports de hauteur
+
+proportion font-size
+- line-height
+- letter spacing, word-spacing
+- margin top bottom padding top bottom
+- largeur des colonnes
+
+
+*/
+
+	.header__link{
+		position: relative;
+		top: -3.7777777778em; /* 68 ÷ 18 */
+	}
+
+.title{
+	font-family: 'Montserrat', sans-serif;
+	color: #2D2825;
+	line-height: 1.2;
+	font-size: 1.6363636364em;
+	/* 36 ÷ 22 */
+	font-weight: 700;
+}
+/*
+convertir en % le contexte = la taille (width) du parent
+convertir en em le contexte = 
+1 la font-size de l'element si on a modifié la font-size
+2 si on pas modifié la font-size, la font-size du parent
+*/
+	.title--big{
+		font-size: 3.0909090909em;
+		/* 68 ÷ 22 */
+		text-align: center;
+		width: 58.33333333%;
+		/* 700 ÷ 1200 */
+		margin: 0 auto;
+		padding-top: 2.2058823529em;
+		/* 150 ÷ 68 */
+	}
+	.title--small{
+		font-size: 1em; /* 22 ÷ 22 */
+		text-align: center;
+		font-weight: 400;
+		color: #999;
+		margin-top: .9090909091em; /* 20 ÷ 22 */
+	}
+	.title--mission{
+		background: url(img/mission.svg) no-repeat center top;
+		padding-top: 6.6666666667em; /* 240 ÷ 36 */
+	}
+	.title--proto{
+		background: url(img/prototypes.svg) no-repeat center top;
+		padding-top: 6.6666666667em;
+	}
+
+.container{
+	margin: 0 auto;
+	max-width: 54.545454545em; /*1200px;*/
+	/* 
+	convertir le container
+	exception, pas en % convertir en EM
+
+	taille souhaitée ÷ contexte = rapport de proportion
+	(contexte font-size de base est 16px)
+	1200 ÷ 22
+
+	*/
+}
+	.col {
+		width: 65%;/*780px;*/
+		/*
+		en % 780 ÷ 1200 = 0.65
+		*/
+		margin: 4.5454545455em auto;
+		/*
+		en EM 100 ÷ 22 = 4,5454545455
+		*/
+	}
+
+/* LINK */
+a{
+	font-family: 'Montserrat', sans-serif;
+	text-decoration: none;
+	font-size: .8181818182em; /* 18 / 22 */
+	text-transform: uppercase;
+	font-weight: 400;
+	color: #4A90E2;
+}
+	a:hover,a:focus{ /**/ }
+
+	.footer a{
+		font-size: 1em; /* 14 / 14 */
+		color: #fff;
+	}
+	.btn{
+		border:.04545454545em solid #4A90E2; /* 1 / 22 */
+		border-radius: 2.2727272727em;/* 50 / 22 */
+		font-size: 1em; /* 22 / 22*/
+		padding: .9090909091em 3.6363636364em;/* contexte 22 */
+		display: inline-block;
+		margin-top: 2.2727272727em; /* 50/22 */
+	}
+	.center {
+		text-align: center;
+	}
+	.btn:hover,.btn:focus{ color: #000; }
+
+
+
+/* IMAGE */
+
+.fimg{
+	margin: 0 0 4.5454545455em; /* 100 ÷ 22 */
+	text-align: center;
+}
+	.fimg__caption{
+		font-size: .7272727273em;/* 16 / 22 */
+		color: #999;
+		font-style: italic;		
+	}
+	img {
+		max-width: 100%;
+	}
+
+.quote{
+	font-size: 1.6363636364em; /* 36 / 22 */
+	color: #4A90E2;
+	font-style: italic;
+	line-height: 1.5;
+	width: 65%; /* 780 / 1200 */
+	margin: 2.7777777778em auto; /*100 ÷ 36 */
+}
+	.quote:before{content: "«";}
+	.quote:after{content: "»";}
+
+
+.header {
+	background: url(img/banner.png) no-repeat bottom center #999;
+	background-size: cover;
+	height: 31.818181818em; /* 700 ÷ 22 */
+}
+
+.footer {
+	font-family: 'Montserrat', sans-serif; 
+	background-color: #4a4a4a;
+	font-size: .6363636364em; /* 14 ÷ 22 */
+	color: #fff;
+}
+
+
+.box {
+	background-color: #fff;
+}
+	.title__box{
+		color: #FFF;
+		text-align: center;
+		background-color: #4A90E2;
+		width: 50%;
+		height: 14.583333333em; /* 525 ÷ 36 */
+		line-height: 14.583333333em;
+		margin: 0;
+
+		float: left;
+	}
+	.box__info{
+		width: 46%;
+		padding: 0 2%;
+
+		float: right;
+	}
+
+	.clearboth{
+		clear: both;
+	}
+
+	.clearfix:after {
+	  content: "";
+	  display: table;
+	  clear: both;
+	}
+
+	/*
+	clear:both;
+	ramener un element en dessous d'un autre element en float
+
+	Les techniques de clearfix
+
+	solution 1
+	la classe clearfix avec les prop toujours dans votre css
+	ajouter la classe clearfix sur le parent
+	qui a des enfants en float
+
+	solution 2
+	overflow:hidden;
+	sur le parent qui a des enfants en float
+	leparent va prendre en compte les enfants
+	adapter la hauteur
+	fonctionne pas toujours a cause de la prop overflow
+	*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
