@@ -1,14 +1,57 @@
 /*
-Bonjour
+	SASS
+	22px > em
+	22px > rem
 
-ouvrir:
-ioanativadar.be/projets/rethinking-ux/facebook/
-recuperer les images sur:
-Prof/ThronteP/201617/layout-em-pourcentage/img/
+	BEM
+	Block  > REM
+	Element > EM
+
+	Module  > REM
+	Composant > EM
 */
+
+html{
+	/* font-size: 100%;  16px */
+
+	font-size: 62.5%; /* ROOT = 10 */
+
+
+	/*
+	EM
+	line-height
+	container (largeur colonne)
+	margin bottom top padding top bottom
+	letter spacing, word spacing
+
+	taille souhaitée ÷ le contexte = em
+	le contexte
+	le contexte pour les em c'est la taille (font-size) du parent 
+	SAUF quand la font-size de l'element est modifié, 
+	on prend alors cette nouvelle valeur
+
+
+	%
+	margin-left right padding right
+	taille des colonnes
+	img
+
+	taille souhaitée ÷ le contexte = *100
+	le contexte pour les % c'est la taille (width) du parent
+
+
+	*/
+}
+
 body {
 	font-family: 'Libre Baskerville', serif;
-	font-size: 22px;
+	font-size: 1.375em; /* 22 ÷ 16 */
+
+	/*font-size: 2.2em;  22 ÷ 10 */
+
+	/* RootEM */
+	font-size: 2.2rem;
+	
 	color: #333;
 	font-weight: 400;
 	line-height: 2.45; /* Pas d'unité */
@@ -19,6 +62,10 @@ body {
 
 /*
 	On reprend?
+	Les fichiers sont sur GitHub
+	https://github.com/lipelip/FD1617/tree/B2G2
+
+	> Terminer la convertion pour la semaine prochaine.
 
 	Pour avoir un site responsive 
 	ET surtout fluide (pour toutes les tailles d'écran)
@@ -51,17 +98,17 @@ body {
 	color: #2D2824;
 	font-weight: 700;
 	line-height: 1.2;
-	font-size: 36px;
+	font-size: 1.6363636364em; /* 36 ÷ 22 */
 }
 	.title--big{
-		font-size: 68px;
+		font-size: 3.0909090909em; /* 68 ÷ 22 */
 		text-align: center;
 
-		width: 700px;
+		width: 58.333333333%; /* 700 ÷ 1200 */
 		margin: 0 auto;
 	}
 	.title--small{
-		font-size: 22px;
+		font-size: 1em; /* 22 ÷ 22 */
 		text-align: center;
 		color: #999;
 		font-weight: 400;
@@ -70,13 +117,13 @@ body {
 		background-image: url(img/mission.svg);
 		background-repeat: no-repeat;
 		background-position: center top;
-		padding-top: 240px;
+		padding-top: 6.6666666667em; /* 240 ÷ 36 */
 	}
 	.title--proto{
 		background-image: url(img/prototypes.svg);
 		background-repeat: no-repeat;
 		background-position: center top;
-		padding-top: 240px;
+		padding-top: 6.6666666667em;
 	}
 
 /* LIEN */
@@ -84,24 +131,26 @@ body {
 a {
 	font-family: 'Montserrat', sans-serif;
 	text-decoration: none;
-	font-size: 18px;
+	font-size: 0.8181818182em; /* 18 / 22 */
 	text-transform: uppercase;
 	font-weight: 400;
 	color: #4A90E2;
+
+
 }
 	a:hover,a:focus{}
 
 	.footer a {
-		font-size: 14px;
+		font-size: 1em; /* 14 / 14 */
 		color: #fff;
 	}
 	.btn {
-		border: 1px solid #4A90E2;
-		font-size: 22px;
-		border-radius: 50px;
-		padding: 20px 80px;
+		border: .04545454545em solid #4A90E2; /* 1 / 22*/
+		font-size: 1em; /* 22 / 22 */
+		border-radius: 2.2727272727em; /* 50 ÷ 22 */ 
+		padding: .9090909091em 3.6363636364em; /* 20 et 80 ÷ 22*/
 		display: inline-block;
-		margin-top: 50px;
+		margin-top: 2.2727272727em;/* 50 ÷ 22 */
 	}
 	.center{ text-align: center;  }
 		.btn:hover,.btn:focus {
@@ -110,7 +159,7 @@ a {
 
 /* CITATION */
 .quote {
-	font-size: 36px;
+	font-size: 1.6363636364em; /* 36 ÷ 22 */
 	color: #4A90E2;
 	line-height: 1.5;
 	font-style: italic;
@@ -125,20 +174,20 @@ a {
 /* LAYOUT */
 
 .container {
-	width: 1200px;
+	max-width: 54.545454545em; /* EM 1200 ÷ 22 */
 	margin: 0 auto;
 }
 .col{
-	width: 780px;
-	margin: 100px auto;
+	width: 65%; /* % 780 ÷ 1200 */
+	margin: 4.5454545455em auto; /* 100 ÷ 22 */
 }
 
 .fimg{
-	margin: 100px 0;
+	margin: 4.5454545455em auto; /* 100 ÷ 22 */
 	text-align: center;
 }
 .fimg__caption{
-	font-size: 16px;
+	font-size: .7272727273em; /* 16 ÷ 22 */
 	color: #999;
 	font-style: italic;
 	/*text-align: center;*/
@@ -155,24 +204,25 @@ img {
 .header {
 	background: url(img/banner.png) 
 	no-repeat center bottom #D8D8D8;
-	height: 700px; 
+	height: 31.818181818em; /* 700 ÷ 22 */ 
 	background-size: cover;
-	margin-top: 80px;
+	margin-top: 3.6363636364em;
 }
 	/* sur .title--big */
 	.title--big {
-		padding-top: 180px;
+		padding-top: 2.6470588235em;
+		/* 180 ÷ 68 */
 	}
 .footer {
 	font-family: 'Montserrat', sans-serif; 
 	background: #4a4a4a;
-	font-size: 14px;
+	font-size: 0.6363636364em;/* 14 / 22 */
 	color: #fff;
 }
 
 .header__link {
 	position: relative;
-	top: -68px;
+	top: -3.7777777778em; /* 68 ÷ 18 */
 }
 
 /* BOX */
@@ -210,8 +260,8 @@ img {
 		margin: 0;
 		width: 50%;
 		float: left;
-		height: 525px;
-		line-height: 525px;
+		height: 14.583333333em; /* 525 ÷ 36 */
+		line-height: 14.583333333em;
 	}
 	.box__info{
 		width: 46%;
